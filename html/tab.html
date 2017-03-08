@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @charset "UTF-8";
+        html {
+            font-size: 100px;
+            -webkit-text-size-adjust: 100%; }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p {
+            margin: 0;
+            padding: 0;
+            border: 0 none;
+            outline: 0;
+            font-family: inherit;
+            font-weight: inherit;
+            font-size: 100%;
+            font-style: normal;
+            vertical-align: baseline; }
+
+        body, button, input, select, textarea {
+            font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; }
+
+        header, footer, section, article {
+            display: block; }
+
+        del {
+            text-decoration: line-through; }
+
+        ul, ol {
+            list-style: none; }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 400; }
+
+        html, body, div, article, footer, header, nav, section, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dd, dt, span, em, a, i, strong, button, input, select, textarea,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent; }
+
+        a, input, textarea {
+            background: none;
+            outline: 0; }
+
+        a {
+            -webkit-tap-highlight-color: transparent;
+            color: #333; }
+        a:link, a:visited, a:hover, a:active {
+            text-decoration: none;
+            outline: 0; }
+
+        img {
+            display: block;
+            border: 0 none;
+            vertical-align: middle; }
+
+        @font-face {
+            font-family: iconwap;
+            src: url(../../images/iconfont/iconwap.ttf?20170112) format("truetype"), url(../../images/iconfont/iconwap.woff?20170112) format("woff"), url(../../images/iconfont/iconwap.svg?20170112) format("svg"); }
+        [class^="iconn-"],
+        [class*="iconn-"] {
+            font-family: iconwap !important;
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            display: inline-block;
+            vertical-align: middle;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale; }
+
+        [class^="iconn-"]:before,
+        [class*="iconn-"]:before {
+            display: block; }
+
+        cite {
+            font-style: normal; }
+
+        body {
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100%;
+            line-height: 1;
+            font-size: 14px;
+            color: #333;
+            background-color: #f6f6f6; }
+
+        .opg .show {
+            display: block; }
+        .opg .hidden {
+            display: none; }
+        .opg .block {
+            display: block; }
+        .opg .inline {
+            display: inline; }
+        .opg .inline-block {
+            display: inline-block; }
+        .opg .fl {
+            float: left; }
+        .opg .fr {
+            float: right; }
+        .opg small {
+            color: #999;
+            font-size: 65%; }
+        .opg .red {
+            color: #ED5B5D; }
+        .opg .del {
+            color: #999;
+            font-size: 87%; }
+        .opg .img-box {
+            overflow: hidden; }
+        .opg .img-box img {
+            width: 100%; }
+        .opg .search-list li {
+            overflow: hidden;
+            empty-cells: show;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+        .opg .item-txt {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            word-break: break-all;
+            -webkit-box-orient: vertical; }
+        .opg .item-pay {
+            color: #999;
+            font-size: .24rem; }
+        .opg .m-switch {
+            width: rem(76);
+            height: rem(44);
+            -webkit-border-radius: rem(76);
+            border-radius: rem(76);
+            background-color: #999;
+            -webkit-transition: background-color 0.1s;
+            transition: background-color 0.1s; }
+        .opg .m-switch:before, .opg .m-switch:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: -webkit-transform 0.35s;
+            transition: transform 0.35s, -webkit-transform 0.35s; }
+        .opg .m-switch:before {
+            width: rem(76);
+            height: rem(44);
+            -webkit-border-radius: rem(76);
+            border-radius: rem(76);
+            background-color: #999; }
+        .opg .m-switch:after {
+            width: rem(44);
+            height: rem(44);
+            -webkit-border-radius: rem(44);
+            border-radius: rem(44);
+            background-color: #FFFFFF; }
+        .opg .m-switch.active {
+            background-color: #04BE02; }
+        .opg .m-switch.active:before {
+            -webkit-transform: scale(0);
+            transform: scale(0); }
+        .opg .m-switch.active:after {
+            margin-left: rem(-12);
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%); }
+
+        .state {
+            background-color: #fff;
+            padding-left: 0.3rem;
+            margin-top: 0.2rem; }
+        .state .state-tl {
+            font-size: 0.32rem;
+            line-height: 1rem;
+            border-bottom: 1px solid #eee; }
+        .state .para-sec {
+            padding: 0.24rem 0.5rem 0.12rem 0rem; }
+        .state .para-sec-reset {
+            padding-right: 0.3rem; }
+        .state .para-sec-reset p {
+            text-align: justify; }
+        .state .state-para {
+            font-size: 0.28rem;
+            color: #666;
+            line-height: 0.42rem;
+            margin-bottom: 0.16rem; }
+        .state .state-color {
+            line-height: 0.42rem; }
+        .state .state-tip {
+            color: #E97820 !important; }
+
+        .tab-cont {
+            background-color: #fff;
+            margin-top: 0.2rem;
+            padding-left: 0.3rem; }
+        .tab-cont .tab-nav {
+            font-size: 0;
+            padding: 0.3rem 0.2rem 0rem 0rem;
+            border-bottom: 1px solid #DDD; }
+        .tab-cont .tab-it {
+            display: inline-block;
+            font-size: 0.26rem;
+            color: #666;
+            height: 0.6rem;
+            line-height: 0.6rem;
+            width: 2.2rem;
+            background-color: #F0F0F0;
+            border: 1px solid #ddd;
+            text-align: center;
+            border-radius: 0.3rem;
+            margin-bottom: 0.3rem; }
+        .tab-cont .tab-it:not(:nth-child(3)) {
+            margin-right: 0.15rem; }
+        .tab-cont .active {
+            color: #fff;
+            background-color: #ED6262;
+            border: 1px solid #ED6262; }
+        .tab-cont .tab-txt {
+            display: none;
+            padding: 0.16rem 0.3rem 0.3rem 0rem; }
+        .tab-cont .tab-txt .tab-tip:nth-child(2) {
+            margin-top: 0.4rem; }
+        .tab-cont .txt-it {
+            color: #666;
+            font-size: 0.28rem;
+            line-height: 0.42rem; }
+        .tab-cont .tab-tip {
+            overflow: hidden;
+            color: #888;
+            font-size: 0.22rem;
+            margin-bottom: 0.08rem; }
+        .tab-cont .tab-tip dt {
+            float: left;
+            line-height:0.32rem; }
+        .tab-cont .tab-tip dd {
+            overflow: hidden;
+            line-height: 0.32rem; }
+
+        .state-list .state-it {
+            overflow: hidden;
+            height: 0.88rem; }
+        .state-list .state-it:not(:last-child) {
+            border-bottom: 1px solid #eee; }
+        .state-list .state-it span {
+            float: left;
+            line-height: 0.88rem;
+            font-size: 0.28rem;
+            color: #666; }
+        .state-list .state-go {
+            float: right;
+            height: 0.88rem;
+            line-height: 0.88rem;
+            width: 0.88rem;
+            text-align: center; }
+
+        /*底部注*/
+        .tips {
+            overflow: hidden;
+            color: #888;
+            font-size: 0.22rem;
+            padding: 0.2rem 0.3rem 0.4rem; }
+        .tips dt {
+            float: left;
+            line-height: 1.8; }
+        .tips dd {
+            overflow: hidden; }
+        .tips dd p {
+            line-height: 1.8; }
+
+        /*icon*/
+        @font-face {
+            font-family: iconwap;
+            src: url(../../../images/iconfont/iconwap.ttf?161229) format("truetype"), url(../../../images/iconfont/iconwap.woff?161229) format("woff"), url(../../../images/iconfont/iconwap.svg?161229) format("svg"); }
+        .iconn-41:before {
+            content: '\eb1e'; }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="tab-cont">
+        <div class="tab-nav">
+            <span class="tab-it active">分销商品返利</span>
+            <span class="tab-it">购买商品返利</span>
+            <span class="tab-it">分享商品返利</span>
+            <span class="tab-it">好友购买返利</span>
+            <span class="tab-it">商品售出返利</span>
+        </div>
+        <div class="con-box">
+            <!--分销商品返利-->
+            <div style="display:block;" class="tab-txt">
+                <p class="txt-it">成为美店店主，添加佣金不为0的商品进行分销，商品在美店被购买，美店店主可获得佣金。</p>
+            </div><!--购买商品返利-->
+            <div class="tab-txt">
+                <p class="txt-it">用户购买返利商品，给购买者返利。</p>
+            </div><!--分享商品返利-->
+            <div class="tab-txt">
+                <p class="txt-it">用户分享返利商品，商品被购买，给分享者返利。</p>
+                <dl class="tab-tip">
+                    <dt>注：</dt>
+                    <dd>对于分享者有多个的情况下，多个分享者共同拿一份返利。</dd>
+                </dl>
+                <dl class="tab-tip">
+                    <dt>例：</dt>
+                    <dd>用户A分享商品给用户B，用户B分享商品给用户C，用户C购买，     分享者为A、B，则A、B共同拿一份返利。</dd>
+                </dl>
+            </div><!--好友购买返利-->
+            <div class="tab-txt">
+                <p class="txt-it">对于形成邀请关系的用户，被邀请者在注册成功一年内购买返利商品，给邀请者返利。</p>
+                <dl class="tab-tip">
+                    <dt>注：</dt>
+                    <dd>对于分享者有多个的情况下，多个分享者共同拿一份返利。</dd>
+                </dl>
+                <dl class="tab-tip">
+                    <dt>例：</dt>
+                    <dd>用户A分享商品给用户B，用户B分享商品给用户C，用户C购买，     分享者为A、B，则A、B共同拿一份返利。</dd>
+                </dl>
+            </div><!--商品售出返利-->
+            <div class="tab-txt">
+                <p class="txt-it">对于形成邀请关系的用户和商家，被邀请入驻商家的商品被购买，给邀请者返利</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var buttonArr = document.getElementsByTagName("button");
+        var divArr = document.getElementsByTagName("div");
+        for(var i = 0; i < buttonArr.length;i++) {
+            buttonArr[i].index = i;
+            // buttonArr[i].setAttribute("index",i);
+            buttonArr[i].onclick = function() {
+                for(var j = 0; j < buttonArr.length; j++) {
+                    buttonArr[j].style.backgroundColor = "#ccc";
+                    buttonArr[this.index].style.backgroundColor = "yellow";
+                    divArr[j].style.display = "none";
+                    divArr[this.index].style.display = "block";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

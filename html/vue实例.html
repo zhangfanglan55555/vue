@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>属性与方法</title>
+</head>
+<body>
+<script type='text/javascript' src="../js/vue.js"></script>
+<script>
+    var data = {a:1};
+    var vm = new Vue({
+        data:data
+    })
+    //设置属性会影响到原始值,都是双向的
+    vm.a === data.a//true;
+    vm.a  //2
+    data.a//变成2了。
+
+//    设置data.a的值vm.a的值同样会受到影响
+    data.a = 3;
+    vm.a//变成3了。
+
+</script>
+<script>
+//    除了data属性，Vue还有一些有用的属性和方法，这些属性和方法前都有前缀$,以便和代理data属性区分 。
+//    但是我们添加以后就都可以用$的方式调用了？？？
+var data = {a:1}
+var vm = new Vue({
+    el:'#div1',
+    data:data
+})
+    vm.$data === data//true;
+    vm.$el === document.getElementById('div1');//true;
+    vm.$watch('a',function(newVal,oldVal){
+        //这个回调将在vm.a的值改变后调用
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象语法</title>
+</head>
+<body id="app">
+    <!--<div class="static"-->
+        <!--v-bind:class="{active:isActive,'text-danger':hasError}"-->
+    <!--&gt;</div>-->
+    <div id="app1">
+        <div class="static"
+             v-bind:class="{ active: isActive, 'text-danger': hasError }">
+        </div>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        var app = new　Vue({
+            el:'#app1',
+            data:{
+                isActive:true,
+                hasError:false
+            }
+        })
+    </script>
+</body>
+</html>
